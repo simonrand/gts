@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <%= if @current_user do %>
+    <p><img src="<%= @current_user.avatar %>" class="img-circle" style="width:140px"/></p>
+    <h3>Welcome, <%= @current_user.name %>!</h3>
+  <% else %>
+    <h3>Please Login</h3>
+  <% end %>
+</div>
