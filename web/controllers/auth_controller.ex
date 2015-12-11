@@ -3,6 +3,8 @@ defmodule Gts.AuthController do
 
   plug Ueberauth
 
+  import GitHub
+
   alias Gts.User
   alias Ueberauth.Strategy.Helpers
 
@@ -61,6 +63,8 @@ defmodule Gts.AuthController do
   end
 
   defp put_user_in_session(conn, user) do
+    Application.put_env :httpoison, :github_token, user.encrypted_token
+
     conn
     |> put_session(:current_user, user)
     |> put_flash(:info, "Successfully authenticated.")
