@@ -11,15 +11,8 @@
   <div class="row">
     <div class="span12">
       <ul>
-        <li>Total pages: <%= @total_pages %></li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span12">
-      <ul>
         <%= for repo <- @repos do %>
-          <li><%#= repo["full_name"] %></li>
+          <li><%= repo["full_name"] %></li>
         <% end %>
       </ul>
     </div>

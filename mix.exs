@@ -20,7 +20,7 @@ defmodule Gts.Mixfile do
     [mod: {Gts, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
                     :phoenix_ecto, :postgrex, :oauth2, :ueberauth,
-                    :httpoison]]
+                    :httpoison, :ex_link_header]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,7 +40,8 @@ defmodule Gts.Mixfile do
      {:ueberauth, github: "ueberauth/ueberauth", branch: "master", ref: "0.2.0", override: true},
      {:ueberauth_github, github: "ueberauth/ueberauth_github", branch: "master", ref: "fd8e6600467cfcf1905d2a65efb8e1c75f2a37bf"},
      {:credo, "~> 0.1.9", only: [:dev, :test]},
-     {:httpoison, "~> 0.8.0"}]
+     {:httpoison, "~> 0.8.0"},
+     {:ex_link_header, "~> 0.0.3"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
